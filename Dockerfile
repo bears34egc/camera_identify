@@ -32,6 +32,7 @@ RUN sudo ldconfig
 RUN pip install io
 RUN pip install picamera
 RUN pip install numpy
+RUN pip install pushbullet.py
 # Set our working directory
 WORKDIR /usr/src/app2
 
