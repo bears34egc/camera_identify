@@ -2,7 +2,6 @@
 # see more about dockerfile templates here:http://docs.resin.io/pages/deployment/docker-templates
 FROM resin/%%RESIN_MACHINE_NAME%%-python
 
-# use apt-get if you need to install dependencies
 RUN apt-get update && apt-get install build-essential cmake pkg-config \
 		libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev && \
 		apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev
@@ -33,7 +32,6 @@ RUN sudo ldconfig
 RUN pip install io
 RUN pip install picamera
 RUN pip install numpy
-
 # Set our working directory
 WORKDIR /usr/src/app2
 
@@ -50,4 +48,4 @@ COPY . ./
 ENV INITSYSTEM on
 
 # setup-i2c.sh will run when container starts up on the device
-CMD ["bash", "setup-i2c.sh"]
+#CMD ["bash", "setup-i2c.sh"]
